@@ -1,0 +1,31 @@
+<div class="div-curta">
+  <h2>Editar Bebida</h2>
+  <p *ngFor="let erro of erros">{{ erros }}</p>
+  <div>
+    <form [formGroup]="formulario">
+      <table class="table table-bordered">
+        <tr>
+          <th>Nome:</th>
+          <td><input type="text" formControlName="nome" /></td>
+        </tr>
+        <tr>
+          <th>Teor Alcóolico:</th>
+          <td><input type="number" formControlName="teorAlcoolico" /></td>
+        </tr>
+        <tr>
+          <th>Custo R$:</th>
+          <td><input type="number" formControlName="valorCusto" /></td>
+        </tr>
+        <tr>
+          <th>Venda R$:</th>
+          <td><input type="number" formControlName="valorVenda" /></td>
+        </tr>
+        <tr>
+          <td>
+            <button class="btns-e" (click)="editarBebida()">Editar</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</div>

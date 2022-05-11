@@ -1,0 +1,31 @@
+<div class="div-curta">
+  <h2>Editar Acrescento</h2>
+  <p *ngFor="let erro of erros">{{ erros }}</p>
+  <div>
+    <form [formGroup]="formulario">
+      <table class="table table-bordered">
+        <tr>
+          <th>Nome:</th>
+          <td><input type="text" formControlName="nome" /></td>
+        </tr>
+        <tr>
+          <th>Custo R$:</th>
+          <td><input type="number" formControlName="valorCusto" /></td>
+        </tr>
+        <tr>
+          <th>Venda R$:</th>
+          <td><input type="number" formControlName="valorVenda" /></td>
+        </tr>
+        <tr>
+          <th>Gramagem:</th>
+          <td><input type="text" formControlName="gramagem" /></td>
+        </tr>
+        <tr>
+          <td>
+            <button class="btns-e" (click)="editarAcrescento()">Editar</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,63 @@
+<div [formGroup]="formulario" class="div-curta">
+  <div>
+    <input
+      class="input-busca"
+      type="text"
+      formControlName="id"
+      placeholder="  buscar acrescento id..."
+    />
+    <button class="btns" (click)="buscarAcrescentoId()" style="margin-left: 10px">
+      Exibir Acrescento Id
+    </button>
+  </div>
+
+  <div *ngFor="let acrescento of acrescentos">
+    <h1 *ngIf="!acrescento">
+      Acrescento Não localizado
+    </h1>
+    <table *ngIf="acrescento" class="table table-bordered">
+      <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Custo R$</th>
+        <th>Venda R$</th>
+        <th>Gramagem</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <td>{{ acrescento.id }}</td>
+        <td>{{ acrescento.nome }}</td>
+        <td>{{ acrescento.valorCusto }}</td>
+        <td>{{ acrescento.valorVenda }}</td>
+        <td>{{ acrescento.gramagem }}</td>
+
+        <td>
+          <a [routerLink]="'/editarAcrescento/' + acrescento.id"
+            ><button class="btns-e">Editar</button></a
+          >
+        </td>
+        <td>
+          <a [routerLink]="'/excluirAcrescento/' + acrescento.id"
+            ><button class="btns-e">Excluir</button></a
+          >
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div>
+    <a routerLink="/telaPrincipal/" target="_blank"
+      ><button class="btns" style="margin-top: 10px">Início</button>
+    </a>
+  </div>
+  <div>
+    <a routerLink="/telaPrincipalAcrescentos/"
+      ><button class="btns" style="margin-top: 10px">Tela Acrescentos</button>
+    </a>
+  </div>
+  <div>
+    <a routerLink="/telaPrincipalFuncionario/"
+      ><button class="btns" style="margin-top: 10px">Tela Funcionário</button>
+    </a>
+  </div>
+</div>

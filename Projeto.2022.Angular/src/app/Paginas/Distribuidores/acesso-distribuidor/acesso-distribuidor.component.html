@@ -1,0 +1,56 @@
+<div class="div-curta">
+  <ng-container>
+    <div [formGroup]="formulario">
+      <div>
+        <button class="btn">
+          <input
+            type="text"
+            formControlName="chaveAcesso"
+            placeholder="Chave de Acesso"
+          />
+          <button class="btn-ok" (click)="buscarChave()">Ok</button>
+
+          <div *ngFor="let distribuidor of distribuidor">
+            <h4 *ngIf="!distribuidor">Distribuidor não logado</h4>
+            <table *ngIf="distribuidor" class="table">
+              <h2>Dados do distribuidor logado</h2>
+              <tr>
+                <th>Distribuidor</th>
+                <td>{{ distribuidor.id }}</td>
+              </tr>
+              <tr>
+                <th>Nome</th>
+                <td>{{ distribuidor.nome }}</td>
+              </tr>
+              <tr>
+                <th>Cnpj</th>
+                <td>{{ distribuidor.cnpj }}</td>
+              </tr>
+              <tr>
+                <th>Email</th>
+                <td>{{ distribuidor.email }}</td>
+              </tr>
+              <tr>
+                <th>Telefone</th>
+                <td>{{ distribuidor.telefone }}</td>
+              </tr>
+              <tr>
+                <th>
+                  <a
+                    *ngIf="distribuidor"
+                    routerLink="/produto/"
+                    target="_blank"
+                  >
+                    <button class="btn-continuar">Continuar</button>
+                  </a>
+                </th>
+                <td></td>
+              </tr>
+            </table>
+          </div>
+        </button>
+        <div></div>
+      </div>
+    </div>
+  </ng-container>
+</div>

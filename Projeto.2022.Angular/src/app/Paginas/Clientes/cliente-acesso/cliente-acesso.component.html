@@ -1,0 +1,78 @@
+<div class="div-curta">
+  <ng-container>
+    <div [formGroup]="formulario">
+      <div>
+        <button class="btn">
+          <input
+            type="text"
+            formControlName="chaveAcesso"
+            placeholder="Chave de Acesso"
+          />
+          <button class="btn-ok" (click)="buscarClienteChave()">Ok</button>
+
+          <div *ngFor="let cliente of clientes">
+            <table class="table">
+              <div *ngIf="cliente">
+                <h2>Dados do cliente logado</h2>
+                <tr>
+                  <th>cliente</th>
+                  <td>{{ cliente.id }}</td>
+                </tr>
+                <tr>
+                  <th>Nome</th>
+                  <td>{{ cliente.nome }}</td>
+                </tr>
+                <tr>
+                  <th>Sobrenome</th>
+                  <td>{{ cliente.sobrenome }}</td>
+                </tr>
+                <tr>
+                  <th>Cpf</th>
+                  <td>{{ cliente.cpf }}</td>
+                </tr>
+                <tr>
+                  <th>Email</th>
+                  <td>{{ cliente.email }}</td>
+                </tr>
+                <tr>
+                  <th>Telefone</th>
+                  <td>{{ cliente.telefone }}</td>
+                </tr>
+                <tr>
+                  <th>Data nascimento</th>
+                  <td>{{ cliente.dataNascimento }}</td>
+                </tr>
+                <th>
+                  <a *ngIf="cliente" href="/atualizarDadosClienteChave/{{chave}}">
+                    <button class="btn-editar">Atualizar dados</button>
+                  </a>
+                </th>
+                <tr>
+                  <th>
+                    <a *ngIf="cliente" href="/telaPrincipalPedidos/" target="_blank">
+                      <button class="btn-continuar">Continuar</button>
+                    </a>
+                  </th>
+                  <td></td>
+                </tr>
+              </div>
+            </table>
+            <div *ngIf="!cliente">
+              <h4>Chave não encontrada</h4>
+              <a href="#">Recupera chave</a>
+              <a href="/cadastrarCliente/" target="_blank"
+                ><button class="btns" style="display: block; margin-top: 10px">
+                  Cadastrar-se
+                </button></a
+              >
+            </div>
+          </div>
+        </button>
+        <div></div>
+      </div>
+    </div>
+  </ng-container>
+  <a href="/telaPrincipal">
+    <button class="btns"  style="margin-top: 15px;">Início</button>
+  </a>
+</div>

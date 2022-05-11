@@ -1,0 +1,40 @@
+<div class="div-principal">
+  <div class="col-6 div-btn">
+    <a routerLink="/telaPrincipal/" target="_blank"
+      ><button class="btn-inicio">Início</button>
+    </a>
+  </div>
+  <div class="col-6 div-btn">
+    <a routerLink="/telaPrincipalSabores/"
+      ><button class="btn-tela" style="margin-top: 10px">Tela Sabores</button>
+    </a>
+  </div>
+  <div *ngFor="let sabor of sabores">
+    <table class="table table-bordered">
+      <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Custo R$</th>
+        <th>Venda R$</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <td>{{ sabor.id }}</td>
+        <td>{{ sabor.nome }}</td>
+        <td>{{ sabor.valorCusto }}</td>
+        <td>{{ sabor.valorVenda }}</td>
+        <td>
+          <a [routerLink]="'/editarSabor/' + sabor.id"
+            ><button class="btns-e">Editar</button></a
+          >
+        </td>
+        <td>
+          <a [routerLink]="'/excluirSabor/' + sabor.id"
+            ><button class="btns-e">Excluir</button></a
+          >
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

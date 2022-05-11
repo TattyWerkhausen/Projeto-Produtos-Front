@@ -1,0 +1,114 @@
+<div class="div-principal">
+  <h3>Cadastrar Distribuidor</h3>
+  <form [formGroup]="formulario">
+    <div class="col-6 div-tabela">
+      <table class="table table-bordered">
+        <tr>
+          <th>Nome:</th>
+          <td><input type="text" formControlName="nome" /></td>
+        </tr>
+        <tr>
+          <th>Chave:</th>
+          <td><input type="text" formControlName="chaveAcesso" /></td>
+        </tr>
+        <tr>
+          <th>Cnpj:</th>
+          <td><input type="text" formControlName="cnpj" /></td>
+        </tr>
+        <tr>
+          <th>Email:</th>
+          <td><input type="email" formControlName="email" /></td>
+        </tr>
+        <tr>
+          <th>Telefone:</th>
+          <td>
+            <input type="text" formControlName="telefone" placeholder="" />
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div formGroupName="enderecoModel" class="col-6 div-tabela">
+      <table class="table table-bordered">
+        <tr>
+          <th>UF:</th>
+          <td>
+            <input type="text" formControlName="uf" required="['required']" />
+          </td>
+        </tr>
+
+        <tr>
+          <th>Cep:</th>
+          <td>
+            <input type="text" formControlName="cep" required="['required']" />
+          </td>
+        </tr>
+        <tr>
+          <th>Cidade:</th>
+          <td>
+            <input
+              type="text"
+              formControlName="cidade"
+              required="['required']"
+            />
+          </td>
+        </tr>
+        <tr>
+          <th>Bairro:</th>
+          <td>
+            <input
+              type="text"
+              formControlName="bairro"
+              required="['required']"
+            />
+          </td>
+        </tr>
+        <tr>
+          <th>Rua:</th>
+          <td>
+            <input
+              type="text"
+              name="rua"
+              formControlName="rua"
+              required="['required']"
+            />
+          </td>
+        </tr>
+        <tr>
+          <th>Numero:</th>
+          <td>
+            <input
+              type="number"
+              formControlName="numero"
+              required="['required']"
+            />
+          </td>
+        </tr>
+        <tr>
+          <th>Complemento:</th>
+          <td><input type="text" formControlName="complemento" /></td>
+        </tr>
+      </table>
+    </div>
+  </form>
+  <button class="btn-registrar" (click)="cadastrarDistribuidor()">
+    Registrar
+  </button>
+  <div>
+    <a routerLink="/telaPrincipal/" target="_blank"
+      ><button class="btns">Início</button>
+    </a>
+  </div>
+  <div>
+    <a routerLink="/telaPrincipalDistribuidores/"
+      ><button class="btns">Tela Distribuidor</button></a
+    >
+  </div>
+  <div>
+    <a routerLink="/telaPrincipalFuncionario/"
+      ><button class="btns" style="margin-top: 10px">
+        Tela Funcionário
+      </button></a
+    >
+  </div>
+</div>

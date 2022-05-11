@@ -1,0 +1,40 @@
+<div class="div-principal">
+  <div class="col-6 div-btn">
+    <a routerLink="/telaPrincipal/" target="_blank"
+      ><button class="btn-inicio">Início</button>
+    </a>
+  </div>
+  <div class="col-6 div-btn">
+    <a routerLink="/telaPrincipalMl/"
+      ><button class="btn-tela" style="margin-top: 10px">Tela Ml</button>
+    </a>
+  </div>
+  <div *ngFor="let mll of ml">
+    <table class="table table-bordered">
+      <tr>
+        <th>Id</th>
+        <th>Ml</th>
+        <th>Custo R$</th>
+        <th>Venda R$</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <td>{{ mll.id }}</td>
+        <td>{{ mll.ml }}</td>
+        <td>{{ mll.valorCusto }}</td>
+        <td>{{ mll.valorVenda }}</td>
+        <td>
+          <a [routerLink]="'/editarMlId/' + mll.id"
+            ><button class="btns-e">Editar</button></a
+          >
+        </td>
+        <td>
+          <a [routerLink]="'/excluirMlId/' + mll.id"
+            ><button class="btns-e">Excluir</button></a
+          >
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,79 @@
+.banner-principal {
+  width: 100%;
+  position: relative;
+}
+.menu {
+  display: flex;
+  width: 100%;
+  position: fixed;
+  box-shadow: 1px 3px 15px #edc364;
+  background-color: rgb(132 94 41);
+  z-index: 9;
+}
+.logo {
+  display: block;
+  width: 4%;
+  position: relative;
+  margin-left: 15px;
+  margin-top: -4px;
+}
+.nome-site h1 {
+  font-size: 24px;
+  margin-left: 45px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.55);
+  font-family: "Luxurious Roman", cursive;
+}
+.nome-site :hover {
+  color: black;
+}
+.lista-menu li {
+  padding-left: 75px;
+}
+
+.nav-item {
+  font-weight: 600;
+}
+.nav-item a:hover {
+  color: black !important;
+}
+#cadastre-se {
+  margin-top: 8px;
+}
+#link-cadastrar {
+  text-decoration: none;
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 600;
+  cursor: pointer;
+}
+#link-cadastrar:hover {
+  color: black;
+}
+.lista-icones {
+  display: inline-flex;
+}
+.icone {
+  font-size: 32px;
+}
+
+.botao-cadastrar {
+  background-color: transparent;
+  border: none;
+}
+.div-opcoes {
+  display: grid;
+  position: absolute;
+  background-color: #b58d43;
+  width: 130px;
+  height: 200px;
+  margin-top: 10px;
+  border-radius: 7px;
+  box-shadow: 0px 0px 9px 1px #0a0a0a;
+  margin-left: 5px;
+}
+.div-opcoes a {
+  color: black;
+  margin-left: 10px;
+  margin-top: 10px;
+}

@@ -1,0 +1,27 @@
+<div class="div-curta">
+  <h2>Editar Ml</h2>
+  <p *ngFor="let erro of erros">{{ erros }}</p>
+  <div>
+    <form [formGroup]="formulario">
+      <table class="table table-bordered">
+        <tr>
+          <th>Ml</th>
+          <td><input type="number" formControlName="ml" /></td>
+        </tr>
+        <tr>
+          <th>Custo R$</th>
+          <td><input type="number" formControlName="valorCusto" /></td>
+        </tr>
+        <tr>
+          <th>Venda R$</th>
+          <td><input type="number" formControlName="valorVenda" /></td>
+        </tr>
+        <tr>
+          <td>
+            <button class="btns-e" (click)="editarMl()">Editar</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</div>

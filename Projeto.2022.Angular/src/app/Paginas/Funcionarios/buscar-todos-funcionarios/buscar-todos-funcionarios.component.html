@@ -1,0 +1,68 @@
+<div class="div-principal">
+<div class="col-6 div-btn">
+  <a routerLink="/telaPrincipal/" target="_blank"><button class="btn-inicio">Início</button> </a>
+</div>
+<div class="col-6 div-btn">
+  <a routerLink="/telaPrincipalFuncionario"><button class="btn-tela">Tela Funcionário</button></a>
+</div>
+<div *ngFor="let funcionario of funcionarios ">
+
+  <table class="table table-bordered">
+    <tr>
+      <th>Id</th>
+      <th>Nome</th>
+      <th>Chave</th>
+      <th>Sobrenome</th>
+      <th>Email</th>
+      <th>Telefone</th>
+      <th>Cpf</th>
+      <th>Data Nascimento</th>
+    </tr>
+    <tr>
+      <td>{{ funcionario.id }}</td>
+      <td>{{ funcionario.nome }}</td>
+      <td>{{ funcionario.chaveAcesso }}</td>
+      <td>{{ funcionario.sobrenome }}</td>
+      <td>{{ funcionario.email }}</td>
+      <td>{{ funcionario.telefone }}</td>
+      <td>{{ funcionario.cpf }}</td>
+      <td>{{ funcionario.dataNascimento }}</td>
+    </tr>
+
+    <tr>
+      <th>UF</th>
+      <th>Cep</th>
+      <th>Cidade</th>
+      <th>Bairro</th>
+      <th>Rua</th>
+      <th>Número</th>
+      <th>Complemento</th>
+      <th></th>
+    </tr>
+    <tr>
+      <td>{{ funcionario.enderecoModel.uf }}</td>
+      <td>{{ funcionario.enderecoModel.cep }}</td>
+      <td>{{ funcionario.enderecoModel.cidade }}</td>
+      <td>{{ funcionario.enderecoModel.bairro }}</td>
+      <td>{{ funcionario.enderecoModel.rua }}</td>
+      <td>{{ funcionario.enderecoModel.numero }}</td>
+      <td>{{ funcionario.enderecoModel.complemento }}</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>
+        <a [routerLink]="'/editarFuncionario/' + funcionario.id"
+          ><button class="btns-e">Editar</button></a
+        >
+      </td>
+      <td>
+        <a [routerLink]="'/excluirFuncionario/' + funcionario.id"
+          ><button class="btns-e">Excluir</button></a
+        >
+      </td>
+    </tr>
+  </table>
+  <div class="divisoria"><div id="h-divisoria">Dados do Funcionário</div></div>
+</div>
+</div>
+

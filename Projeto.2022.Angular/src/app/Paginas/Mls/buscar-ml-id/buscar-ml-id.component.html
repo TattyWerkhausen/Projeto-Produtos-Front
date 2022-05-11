@@ -1,0 +1,61 @@
+<div [formGroup]="formulario" class="div-curta">
+  <div>
+    <input
+      class="input-busca"
+      type="text"
+      formControlName="id"
+      placeholder="buscar ml id..."
+    />
+    <button class="btns" (click)="buscarMlId()" style="margin-left: 10px">
+      Exibir Ml Id
+    </button>
+  </div>
+
+  <div *ngFor="let mll of ml">
+    <table class="table table-bordered">
+      <tr *ngIf="!mll">
+        Ml Não localizado
+      </tr>
+      <tr *ngIf="mll">
+        <th>Id</th>
+        <th>Ml</th>
+        <th>Custo R$:</th>
+        <th>Venda R$:</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <td>{{ mll.id }}</td>
+        <td>{{ mll.ml }}</td>
+        <td>{{ mll.valorCusto }}</td>
+        <td>{{ mll.valorVenda }}</td>
+
+        <td>
+          <a [routerLink]="'/editarMlId/' + mll.id"
+            ><button class="btns-e">Editar</button></a
+          >
+        </td>
+        <td>
+          <a [routerLink]="'/excluirMlId/' + mll.id"
+            ><button class="btns-e">Excluir</button></a
+          >
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div>
+    <a routerLink="/telaPrincipal/" target="_blank"
+      ><button class="btns" style="margin-top: 10px">Início</button>
+    </a>
+  </div>
+  <div>
+    <a routerLink="/telaPrincipalMl/" target="_blank"
+      ><button class="btns" style="margin-top: 10px">Tela Ml</button>
+    </a>
+  </div>
+  <div>
+    <a routerLink="/telaPrincipalFuncionario/" target="_blank"
+      ><button class="btns" style="margin-top: 10px">Tela Funcionário</button>
+    </a>
+  </div>
+</div>

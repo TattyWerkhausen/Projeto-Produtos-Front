@@ -1,0 +1,112 @@
+<div class="div-curta">
+  <div [formGroup]="formulario">
+    <div>
+      <input
+        class="input-busca"
+        type="text"
+        formControlName="nome"
+        placeholder="  buscar distribuidor Nome..."
+      />
+      <button
+        class="btns"
+        (click)="buscarDistribuidorNome()"
+        style="margin-left: 10px"
+      >
+        Buscar Distribuidor Nome
+      </button>
+    </div>
+
+    <div
+      [class]="classeAlerta.resultado"
+      *ngIf="exibirMensagemNaoEncontrado && !distribuidorFoiEncontrado()"
+    >
+      <p id="frase-nao-localizado">Distribuidor Não localizado</p>
+      <button
+        class="btn-ok-funcionario-nao-encontrado"
+        (click)="encerrarAposNadaEncontrado()"
+      >
+        Ok
+      </button>
+    </div>
+    <div *ngIf="distribuidorFoiEncontrado()" class="busca-com-sucesso">
+      <table class="table table-bordered">
+        <tr>
+          <th>Id</th>
+          <th>Nome</th>
+          <th>Chave</th>
+          <th>Cnpj</th>
+          <th>Email</th>
+          <th>Telefone</th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr>
+          <td>{{ distribuidorEncontrado?.id }}</td>
+          <td>{{ distribuidorEncontrado?.nome }}</td>
+          <td>{{ distribuidorEncontrado?.chaveAcesso }}</td>
+          <td>{{ distribuidorEncontrado?.cnpj }}</td>
+          <td>{{ distribuidorEncontrado?.email }}</td>
+          <td>{{ distribuidorEncontrado?.telefone }}</td>
+        </tr>
+
+        <tr>
+          <th>UF</th>
+          <th>Cep</th>
+          <th>Cidade</th>
+          <th>Bairro</th>
+          <th>Rua</th>
+          <th>Número</th>
+          <th>Complemento</th>
+          <th></th>
+        </tr>
+        <tr>
+          <td>{{ distribuidorEncontrado?.enderecoModel?.uf }}</td>
+          <td>{{ distribuidorEncontrado?.enderecoModel?.cep }}</td>
+          <td>{{ distribuidorEncontrado?.enderecoModel?.cidade }}</td>
+          <td>{{ distribuidorEncontrado?.enderecoModel?.bairro }}</td>
+          <td>{{ distribuidorEncontrado?.enderecoModel?.rua }}</td>
+          <td>{{ distribuidorEncontrado?.enderecoModel?.numero }}</td>
+          <td>{{ distribuidorEncontrado?.enderecoModel?.complemento }}</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            <a
+              [routerLink]="
+                '/editarDistribuidorNome/' + distribuidorEncontrado?.nome
+              "
+              ><button class="btns-e">Editar</button></a
+            >
+          </td>
+          <td>
+            <a
+              [routerLink]="
+                '/excluirDistribuidorNome/' + distribuidorEncontrado?.nome
+              "
+              ><button class="btns-e">Excluir</button></a
+            >
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <a routerLink="/telaPrincipal/" target="_blank"
+        ><button class="btns" style="margin-top: 10px">Início</button></a
+      >
+    </div>
+    <div>
+      <a routerLink="/telaPrincipalDistribuidores/"
+        ><button class="btns" style="margin-top: 10px">
+          Tela Distribuidor
+        </button></a
+      >
+    </div>
+    <div>
+      <a routerLink="/telaPrincipalFuncionario/"
+        ><button class="btns" style="margin-top: 10px">
+          Tela Funcionário
+        </button></a
+      >
+    </div>
+  </div>
+</div>

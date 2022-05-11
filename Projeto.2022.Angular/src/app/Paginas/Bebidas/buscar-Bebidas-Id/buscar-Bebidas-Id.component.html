@@ -1,0 +1,64 @@
+<div class="div-curta">
+  <div [formGroup]="formulario">
+    <div>
+      <input
+        class="input-busca"
+        type="text"
+        formControlName="id"
+        placeholder="  buscar bebida id..."
+      />
+      <button class="btns" (click)="buscarBebidaId()" style="margin-left: 10px">
+        Buscar Bebida Id
+      </button>
+    </div>
+
+    <div *ngFor="let bebida of bebidas">
+      <h1 *ngIf="!bebida">
+        Bebida Não localizada
+      </h1>
+      <table *ngIf="bebida" class="table table-bordered">
+        <tr>
+          <th>Id</th>
+          <th>Nome</th>
+          <th>Teor Alcóolico</th>
+          <th>Custo R$</th>
+          <th>Venda R$</th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr>
+          <td>{{ bebida.id }}</td>
+          <td>{{ bebida.nome }}</td>
+          <td>{{ bebida.teorAlcoolico }}</td>
+          <td>{{ bebida.valorCusto }}</td>
+          <td>{{ bebida.valorVenda }}</td>
+          <td>
+            <a [routerLink]="'/editarBebida/' + bebida.id"
+              ><button class="btns-e">Editar</button></a
+            >
+          </td>
+          <td>
+            <a [routerLink]="'/excluirBebida/' + bebida.id"
+              ><button class="btns-e">Excluir</button></a
+            >
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <a routerLink="/telaPrincipal/" target="_blank"
+        ><button class="btns" style="margin-top: 10px">Início</button>
+      </a>
+    </div>
+    <div>
+      <a routerLink="/telaPrincipalBebidas/"
+        ><button class="btns">Tela Bebidas</button></a
+      >
+    </div>
+    <div>
+      <a routerLink="/telaPrincipalFuncionario/"
+        ><button class="btns">Tela Funcionário</button></a
+      >
+    </div>
+  </div>
+</div>

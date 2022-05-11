@@ -1,0 +1,70 @@
+<div class="div-principal">
+  <div class="col-6 div-btn">
+    <a routerLink="/telaPrincipal/" target="_blank"
+      ><button class="btn-inicio">Início</button>
+    </a>
+  </div>
+  <div class="col-6 div-btn">
+    <a routerLink="/telaPrincipalClientes/"
+      ><button class="btn-tela">Tela Cliente</button></a
+    >
+  </div>
+  <div *ngFor="let cliente of clientes">
+    <table class="table table-bordered">
+      <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Chave</th>
+        <th>Sobrenome</th>
+        <th>Email</th>
+        <th>Telefone</th>
+        <th>Cpf</th>
+        <th>Data Nascimento</th>
+      </tr>
+      <tr>
+        <td>{{ cliente.id }}</td>
+        <td>{{ cliente.nome }}</td>
+        <td>{{ cliente.chaveAcesso }}</td>
+        <td>{{ cliente.sobrenome }}</td>
+        <td>{{ cliente.email }}</td>
+        <td>{{ cliente.telefone }}</td>
+        <td>{{ cliente.cpf }}</td>
+        <td>{{ cliente.dataNascimento }}</td>
+      </tr>
+
+      <tr>
+        <th>UF</th>
+        <th>Cep</th>
+        <th>Cidade</th>
+        <th>Bairro</th>
+        <th>Rua</th>
+        <th>Número</th>
+        <th>Complemento</th>
+        <th></th>
+      </tr>
+      <tr>
+        <td>{{ cliente.enderecoModel.uf }}</td>
+        <td>{{ cliente.enderecoModel.cep }}</td>
+        <td>{{ cliente.enderecoModel.cidade }}</td>
+        <td>{{ cliente.enderecoModel.bairro }}</td>
+        <td>{{ cliente.enderecoModel.rua }}</td>
+        <td>{{ cliente.enderecoModel.numero }}</td>
+        <td>{{ cliente.enderecoModel.complemento }}</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          <a [routerLink]="'/editarCliente/' + cliente.id"
+            ><button class="btns-e">Editar</button></a
+          >
+        </td>
+        <td>
+          <a [routerLink]="'/excluirCliente/' + cliente.id"
+            ><button class="btns-e">Excluir</button></a
+          >
+        </td>
+      </tr>
+    </table>
+    <div class="divisoria"><div id="h-divisoria">Dados do Cliente</div></div>
+  </div>
+</div>

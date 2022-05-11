@@ -1,0 +1,35 @@
+<div class="div-curta">
+  <h3>Cadastrar Sabor</h3>
+  <form [formGroup]="formulario">
+    <table class="table table-bordered">
+      <tr>
+        <th>Ml:</th>
+        <td><input type="number" formControlName="ml" /></td>
+      </tr>
+      <tr>
+        <th>Custo R$:</th>
+        <td><input type="number" formControlName="valorCusto" /></td>
+      </tr>
+      <tr>
+        <th>Venda R$:</th>
+        <td><input type="number" formControlName="valorVenda" /></td>
+      </tr>
+    </table>
+  </form>
+  <button class="btn-registrar" (click)="cadastrarMl()">Registrar</button>
+  <div>
+    <a routerLink="/telaPrincipal/" target="_blank"
+      ><button class="btns">Início</button>
+    </a>
+  </div>
+  <div>
+    <a routerLink="/telaPrincipalMl/"
+      ><button class="btns" style="margin-top: 10px">Tela Ml</button>
+    </a>
+  </div>
+  <div>
+    <a routerLink="/telaPrincipalFuncionario/"
+      ><button class="btns" style="margin-top: 10px">Tela Funcionário</button>
+    </a>
+  </div>
+</div>

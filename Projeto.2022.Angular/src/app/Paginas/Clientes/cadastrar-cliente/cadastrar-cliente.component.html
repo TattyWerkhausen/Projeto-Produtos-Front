@@ -1,0 +1,168 @@
+<div class="div-principal">
+  <h3>Cadastrar Cliente</h3>
+  <form [formGroup]="formulario">
+    <div class="col-6 div-tabela">
+      <table class="table table-bordered">
+        <tr>
+          <th>Nome:</th>
+          <td>
+            <input
+              type="text"
+              name="nome"
+              formControlName="nome"
+              required="['required']"
+            />
+          </td>
+          <!--<td> <input [class.control-invalido]="exibirErro('nome')" type="text" formControlName="nome">
+        <ng-container *ngIf="formulario.get('nome')?.dirty || formulario.get('nome')?.touched">
+        <ng-container *ngIf="formulario.get('nome')?.errors?.['required']">
+         <span class="campos">Campo obrigatório</span>
+        </ng-container>
+        <ng-container *ngIf="formulario.get('nome')?.errors?.['maxlength']">
+          <span class="campos">Max 10 caracteres</span>
+        </ng-container>
+      </ng-container>-->
+        </tr>
+
+        <tr>
+          <th>Chave:</th>
+          <td>
+            <input
+              type="password"
+              formControlName="chaveAcesso"
+              required="['required']"
+            />
+          </td>
+        </tr>
+        <tr>
+          <th>Sobrenome:</th>
+          <td>
+            <input
+              type="text"
+              formControlName="sobrenome"
+              required="['required']"
+            />
+          </td>
+        </tr>
+        <tr>
+          <th>Email:</th>
+          <td>
+            <input
+              type="email"
+              formControlName="email"
+              required="['required']"
+            />
+          </td>
+        </tr>
+        <tr>
+          <th>Telefone:</th>
+          <td>
+            <input
+              type="text"
+              name="telefone"
+              formControlName="telefone"
+              required="['required']"
+            />
+          </td>
+        </tr>
+        <tr>
+          <th>Cpf:</th>
+          <td>
+            <input type="text" formControlName="cpf" required="['required']" />
+          </td>
+        </tr>
+        <tr>
+          <th>Data Nascimento:</th>
+          <td><input type="date" formControlName="dataNascimento" /></td>
+        </tr>
+      </table>
+    </div>
+
+    <div formGroupName="enderecoModel" class="col-6 div-tabela">
+      <table class="table table-bordered">
+        <tr>
+          <th>UF:</th>
+          <td>
+            <input
+              type="text"
+              formControlName="uf"
+              required="['required']"
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <th>Cep:</th>
+          <td>
+            <input
+              type="text"
+              formControlName="cep"
+              required="['required']"
+            />
+          </td>
+        </tr>
+        <tr>
+          <th>Cidade:</th>
+          <td>
+            <input
+              type="text"
+              formControlName="cidade"
+              required="['required']"
+            />
+          </td>
+        </tr>
+        <tr>
+          <th>Bairro:</th>
+          <td>
+            <input
+              type="text"
+              formControlName="bairro"
+              required="['required']"
+            />
+          </td>
+        </tr>
+        <tr>
+          <th>Rua:</th>
+          <td>
+            <input
+              type="text"
+              name="rua"
+              formControlName="rua"
+              required="['required']"
+            />
+          </td>
+        </tr>
+        <tr>
+          <th>Numero:</th>
+          <td>
+            <input
+              type="number"
+              formControlName="numero"
+              required="['required']"
+            />
+          </td>
+        </tr>
+        <tr>
+          <th>Complemento:</th>
+          <td><input type="text" formControlName="complemento" /></td>
+        </tr>
+      </table>
+    </div>
+  </form>
+  <button class="btn-registrar" (click)="cadastrarCliente()">Registrar</button>
+  <div>
+    <a routerLink="/telaPrincipal/" target="_blank"
+      ><button class="btns">Início</button></a
+    >
+  </div>
+  <div>
+    <a routerLink="/telaPrincipalClientes/"
+      ><button class="btns">Tela Cliente</button></a
+    >
+  </div>
+  <div>
+    <a routerLink="/telaPrincipalFuncionario/"
+      ><button class="btns">Tela Funcionário</button></a
+    >
+  </div>
+</div>

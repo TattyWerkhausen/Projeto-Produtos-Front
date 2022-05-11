@@ -1,0 +1,33 @@
+<div class="div-curta">
+  <h3>Cadastrar Bebida</h3>
+  <form [formGroup]="formulario">
+    <table class="table table-bordered">
+    <tr>
+      <th>Nome:</th>
+      <td><input type="text" formControlName="nome"></td>
+    </tr>
+    <tr>
+      <th>Teor Alcóolico:</th>
+      <td><input type="text" formControlName="teorAlcoolico"></td>
+    </tr>
+    <tr>
+      <th>Valor Custo:</th>
+      <td><input type="number" formControlName="valorCusto"></td>
+    </tr>
+    <tr>
+      <th>Valor Venda:</th>
+      <td><input type="number" formControlName="valorVenda"></td>
+    </tr>
+    </table>
+  </form>
+    <button class="btn-registrar" (click)="cadastrar()"> Registrar</button>
+  <div>
+    <a routerLink="/telaPrincipal/" target="_blank"><button class="btns">Início</button></a>
+  </div>
+  <div>
+    <a routerLink="/telaPrincipalBebidas/"><button class="btns">Tela Bebidas</button></a>
+  </div>
+  <div>
+    <a routerLink="/telaPrincipalFuncionario/"><button class="btns">Tela Funcionário</button></a>
+  </div>
+</div>

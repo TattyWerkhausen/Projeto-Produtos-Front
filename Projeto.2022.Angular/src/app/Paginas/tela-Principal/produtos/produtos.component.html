@@ -1,0 +1,56 @@
+<div class="div-principal">
+  <div class="col-6 div-btn">
+    <a routerLink="/telaPrincipal/"
+      ><button class="btn-inicio">Início</button></a
+    >
+  </div>
+  <div class="col-6 div-btn">
+    <a routerLink="/#/"><button class="btn-tela">Pedidos</button></a>
+  </div>
+  <div *ngFor="let bebida of bebidas">
+    <table class="table table-bordered">
+      <tr>
+        <th>Bebida</th>
+        <th>Sabores</th>
+        <th>Acrescentos</th>
+        <th>Ml</th>
+        <th>R$</th>
+        <th>Teor Alcóolico</th>
+        <th>Id</th>
+      </tr>
+      <tr>
+        <td>{{ bebida.nome }}</td>
+        <td>
+          <select class="form-select" aria-label="Default select example">
+            <option selected>Sabores</option>
+            <option value="1">Uva</option>
+            <option value="2">Morango</option>
+            <option value="3">Abacaxi</option></select
+          ><button>+</button>
+        </td>
+        <td>
+          <select class="form-select" aria-label="Default select example">
+            <option selected>Acrescentos</option>
+            <option value="1">Calda</option>
+            <option value="2">Licor</option>
+            <option value="3">Creme</option>
+          </select>
+        </td>
+        <td>
+          <select class="form-select" aria-label="Default select example">
+            <option selected>{{ bebida.ml }}</option>
+            <option value="1">300</option>
+            <option value="2">500</option>
+            <option value="3">1000</option>
+          </select>
+        </td>
+        <td>{{ bebida.valorVenda }}</td>
+        <td>{{ bebida.teorAlcoolico }}</td>
+        <td>{{ bebida.id }}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+<div>
+  <!-- <a routerLink="/compras/" target="_blank">Comprar </a> -->
+</div>

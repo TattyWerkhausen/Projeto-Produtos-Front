@@ -1,0 +1,131 @@
+<div class="div-principal">
+  <h3>Cadastrar Funcionario</h3>
+  <form [formGroup]="formulario">
+    <div class="col-6 div-tabela">
+    <table class="table table-bordered">
+      <tr>
+        <th>Nome:</th>
+        <td><input type="text" formControlName="nome" placeholder="" /></td>
+      </tr>
+      <tr>
+        <th>Chave:</th>
+        <td>
+          <input type="text" formControlName="chaveAcesso" placeholder="" />
+        </td>
+      </tr>
+      <tr>
+        <th>Sobrenome:</th>
+        <td>
+          <input type="text" formControlName="sobrenome" placeholder="" />
+        </td>
+      </tr>
+      <tr>
+        <th>Email:</th>
+        <td><input type="email" formControlName="email" placeholder="" /></td>
+      </tr>
+      <tr>
+        <th>Telefone:</th>
+        <td><input type="text" formControlName="telefone" placeholder="" /></td>
+      </tr>
+      <tr>
+        <th>Cpf:</th>
+        <td><input type="text" formControlName="cpf" placeholder="" /></td>
+      </tr>
+      <tr>
+        <th>Data Nascimento:</th>
+        <td>
+          <input type="date" formControlName="dataNascimento" placeholder="" />
+        </td>
+      </tr>
+    </table>
+    </div>
+      <div formGroupName="enderecoModel" class="col-6 div-tabela">
+        <table class="table table-bordered">
+          <tr>
+            <th>UF:</th>
+            <td>
+              <input
+                type="text"
+                formControlName="uf"
+                required="['required']"
+              />
+            </td>
+          </tr>
+
+          <tr>
+            <th>Cep:</th>
+            <td>
+              <input
+                type="text"
+                formControlName="cep"
+                required="['required']"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th>Cidade:</th>
+            <td>
+              <input
+                type="text"
+                formControlName="cidade"
+                required="['required']"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th>Bairro:</th>
+            <td>
+              <input
+                type="text"
+                formControlName="bairro"
+                required="['required']"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th>Rua:</th>
+            <td>
+              <input
+                type="text"
+                name="rua"
+                formControlName="rua"
+                required="['required']"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th>Numero:</th>
+            <td>
+              <input
+                type="number"
+                formControlName="numero"
+                required="['required']"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th>Complemento:</th>
+            <td><input type="text" formControlName="complemento" /></td>
+          </tr>
+        </table>
+      </div>
+  </form>
+  <button class="btn-registrar" (click)="cadastrarFuncionario()">
+    Registrar
+  </button>
+  <div>
+    <a routerLink="/buscarTodosFuncionarios/"
+      ><button class="btns">Exibir Todos</button></a
+    >
+    <div>
+      <a routerLink="/telaPrincipalFuncionario"
+        ><button class="btns">Tela Funcionário</button></a
+      >
+    </div>
+  </div>
+  <div>
+    <a routerLink="/telaPrincipal/" target="_blank"
+      ><button class="btns">Início</button>
+    </a>
+  </div>
+</div>

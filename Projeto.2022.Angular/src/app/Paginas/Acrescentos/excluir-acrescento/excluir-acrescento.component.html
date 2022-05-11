@@ -1,0 +1,7 @@
+<div class="div-curta">
+  <p *ngFor="let erro of erros">{{erro}}</p>
+<h3>Excluir - {{acrescento?.nome}}</h3>
+<h2>Tem certeza que quer excluir?</h2>
+<button class="btns-y" (click)="excluirAcrescento()">Sim</button>
+<button class="btns-n" (click)="naoExcluir()">Não</button>
+</div>

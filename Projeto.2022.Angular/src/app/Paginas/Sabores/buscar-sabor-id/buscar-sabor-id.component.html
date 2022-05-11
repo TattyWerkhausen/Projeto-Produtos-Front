@@ -1,0 +1,61 @@
+<div [formGroup]="formulario" class="div-curta">
+  <div>
+    <input
+      class="input-busca"
+      type="text"
+      formControlName="id"
+      placeholder="buscar sabor id..."
+    />
+    <button class="btns" (click)="buscarSaborId()" style="margin-left: 10px">
+      Exibir Sabor Id
+    </button>
+  </div>
+
+  <div *ngFor="let sabor of sabores">
+    <table class="table table-bordered">
+      <tr *ngIf="!sabor">
+        Sabor Não localizado
+      </tr>
+      <tr *ngIf="sabor">
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Custo R$</th>
+        <th>Venda R$</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <td>{{ sabor.id }}</td>
+        <td>{{ sabor.nome }}</td>
+        <td>{{ sabor.valorCusto }}</td>
+        <td>{{ sabor.valorVenda }}</td>
+
+        <td>
+          <a [routerLink]="'/editarSabor/' + sabor.id"
+            ><button class="btns-e">Editar</button></a
+          >
+        </td>
+        <td>
+          <a [routerLink]="'/excluirSabor/' + sabor.id"
+            ><button class="btns-e">Excluir</button></a
+          >
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div>
+    <a routerLink="/telaPrincipal/" target="_blank"
+      ><button class="btns" style="margin-top: 10px">Início</button>
+    </a>
+  </div>
+  <div>
+    <a routerLink="/telaPrincipalSabores/"
+      ><button class="btns" style="margin-top: 10px">Tela Sabores</button>
+    </a>
+  </div>
+  <div>
+    <a routerLink="/telaPrincipalFuncionario/"
+      ><button class="btns" style="margin-top: 10px">Tela Funcionário</button>
+    </a>
+  </div>
+</div>

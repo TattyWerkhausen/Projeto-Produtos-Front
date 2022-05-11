@@ -1,0 +1,150 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: "Luxurious Roman", cursive;
+  font-family: "The Nautigal", cursive;
+}
+.div-principal {
+  background-color: #b58d43;
+  width: auto;
+  height: auto;
+  padding-left: 30px;
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+.div-curta {
+  background-color: #b58d43;
+  width: auto;
+  height: 100%;
+  padding-left: 30px;
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+.btns {
+  width: 325px;
+  height: 50px;
+  background: border-box;
+  font-size: 16px;
+}
+.btn-registrar {
+  margin-bottom: 30px;
+  margin-top: 15px;
+  width: 325px;
+  height: 40px;
+  background: #edc364;
+  font-size: 16px;
+}
+.table-bordered th {
+  width: 145px;
+}
+.btns-e {
+  width: 100%;
+  height: 35px;
+  background: bisque;
+}
+.input-busca {
+  width: 323px;
+  height: 50px;
+  background: bisque;
+  border: none;
+}
+.btns-y {
+  width: 170px;
+  height: 40px;
+  background: aquamarine;
+}
+.btns-n {
+  width: 170px;
+  height: 40px;
+  margin-left: 10px;
+  background: rgb(247, 92, 86);
+}
+.bem-vindo {
+  text-align: center;
+  font-size: 27px;
+  box-sizing: 5px 10px;
+  text-shadow: 0px 3px 5px rgb(202, 206, 170);
+}
+.btn-continuar {
+  background-color: #dddd68;
+  cursor: pointer;
+  width: 160px;
+  margin-left: 295px;
+  display: block;
+  position: absolute;
+}
+.campos {
+  color: red;
+  display: block;
+  position: absolute;
+}
+.btn-inicio {
+  width: 325px;
+  height: 50px;
+  background: border-box;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.btn-tela {
+  width: 325px;
+  height: 50px;
+  background: border-box;
+  font-size: 16px;
+  margin-bottom: 10px;
+  margin-left: 297px;
+}
+.div-btn {
+  display: block;
+  float: left;
+}
+.div-btns-editar-excluir-tabela {
+  display: inline-flex;
+}
+.divisoria {
+  background-color: #dddd68;
+  height: 35px;
+  text-align: center;
+}
+#h-divisoria {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 8px;
+  margin-left: 43%;
+  position: absolute;
+}
+#frase-nao-localizado {
+  position: absolute;
+  margin-left: 72px;
+  padding-top: 12px;
+}
+.btn-ok-funcionario-nao-encontrado {
+  margin-left: 330px;
+  width: 72px;
+  height: 47px;
+  background: aquamarine;
+  box-shadow: 2px 1px 14px 6px #0d6666;
+}
+.busca-com-sucesso{
+  margin-top: 15px;
+}
+.vermelho-claro {
+  background-color: red;
+  width: 323px;
+  height: 48px;
+  box-shadow: 2px 1px 14px 6px #400a0a;
+  margin-top: 10px;
+}
+.vermelho-escuro {
+  background-color: rgb(211, 17, 17);
+  width: 323px;
+  height: 48px;
+  box-shadow: 2px 1px 14px 6px  rgb(173, 11, 11);
+  margin-top: 10px;
+}

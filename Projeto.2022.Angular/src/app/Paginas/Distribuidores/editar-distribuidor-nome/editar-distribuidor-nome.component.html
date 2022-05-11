@@ -1,0 +1,72 @@
+<div class="div-principal">
+  <h2>Editar Distribuidor</h2>
+  <p *ngFor="let erro of erros">{{ erros }}</p>
+  <div>
+    <form [formGroup]="formulario">
+      <div class="col-6 div-tabela">
+        <table class="table table-bordered">
+          <tr>
+            <th>Nome:</th>
+            <td><input type="text" formControlName="nome" /></td>
+          </tr>
+          <tr>
+            <th>Chave:</th>
+            <td><input type="text" formControlName="chaveAcesso" /></td>
+          </tr>
+          <tr>
+            <th>Cnpj:</th>
+            <td><input type="text" formControlName="cnpj" /></td>
+          </tr>
+          <tr>
+            <th>Email:</th>
+            <td><input type="text" formControlName="email" /></td>
+          </tr>
+          <tr>
+            <th>Telefone:</th>
+            <td><input type="text" formControlName="telefone" /></td>
+          </tr>
+        </table>
+      </div>
+
+      <div formGroupName="enderecoModel" class="col-6 div-tabela">
+        <table class="table table-bordered">
+          <tr>
+            <th>UF:</th>
+            <td><input type="text" formControlName="uf" /></td>
+          </tr>
+          <tr>
+            <th>Cep:</th>
+            <td><input type="text" formControlName="cep" /></td>
+          </tr>
+          <tr>
+            <th>Cidade:</th>
+            <td><input type="text" formControlName="cidade" /></td>
+          </tr>
+          <tr>
+            <th>Bairro:</th>
+            <td><input type="text" formControlName="bairro" /></td>
+          </tr>
+          <tr>
+            <th>Rua:</th>
+            <td><input type="text" formControlName="rua" /></td>
+          </tr>
+          <tr>
+            <th>Numero:</th>
+            <td><input type="number" formControlName="numero" /></td>
+          </tr>
+          <tr>
+            <th>Complemento:</th>
+            <td><input type="text" formControlName="complemento" /></td>
+          </tr>
+        </table>
+      </div>
+      <tr>
+        <td>
+          <button class="btns-e" (click)="editarDistribuidorNome()">
+            Editar
+          </button>
+        </td>
+      </tr>
+    </form>
+  </div>
+</div>

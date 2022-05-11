@@ -1,0 +1,79 @@
+<div class="div-curta">
+  <h2>Cadastro de Pedido</h2>
+  <!-- formulario de pedido -->
+  <form [formGroup]="formulario">
+    <div>
+      <mat-label class="classe-cliente">Cliente</mat-label>
+      <select class="selects" formControlName="clienteId">
+        <option></option>
+        <option *ngFor="let cliente of clientes" [value]="cliente.nome">
+          {{ cliente.nome }}
+        </option>
+      </select>
+    </div>
+    <div>
+      <h3 class="classe-pedido-bebida">
+        Adicionar Bebida<button
+          class="btn-addBebida"
+          (click)="addPedidoBebida()"
+        >
+          <span id="add+">+</span>
+        </button>
+      </h3>
+      <table>
+        <!-- subformulario de pedido bebida -->
+        <tr
+          [formGroupName]="'pedidoBebida-' + bebidaAdicionadaId"
+          *ngFor="let bebidaAdicionadaId of pedidoBebidasAdicionadas"
+        >
+          <td>
+            <mat-label class="nome-sub-classe-bebida">Bebida</mat-label>
+            <select class="selects" formControlName="bebidaId">
+              <option></option>
+              <option *ngFor="let bebida of bebidas" [value]="bebida.id">
+                {{ bebida.nome }} - R$:{{ bebida.valorVenda }}
+              </option>
+            </select>
+          </td>
+          <td>
+            <mat-label class="nome-sub-classes">Ml</mat-label>
+            <select class="selects" formControlName="mlId">
+              <option></option>
+              <option *ngFor="let ml of mls" [value]="ml.id">
+                {{ ml.ml }} - R$:{{ ml.valorVenda }}
+              </option>
+            </select>
+          </td>
+          <td>
+            <mat-label class="nome-sub-classes">Acrescentos</mat-label>
+            <select class="selects" formControlName="acrescentoId">
+              <option></option>
+              <option
+                *ngFor="let acrescento of acrescentos"
+                [value]="acrescento.id"
+              >
+                {{ acrescento.nome }} - {{ acrescento.gramagem }} - R$:{{
+                  acrescento.valorVenda
+                }}
+              </option>
+            </select>
+          </td>
+          <td>
+            <mat-label class="nome-sub-classes">Sabores</mat-label>
+            <select class="selects" formControlName="saborId">
+              <option></option>
+              <option *ngFor="let sabor of sabores" [value]="sabor.id">
+                {{ sabor.nome }} - R$:{{ sabor.valorVenda }}
+              </option>
+            </select>
+          </td>
+          <td>
+
+          <p>Sub total: {{subTotal(bebidaAdicionadaId)}} </p>
+        </td>
+        </tr>
+      </table>
+    </div>
+  </form>
+  <button (click)="salvarPedido()">Salvar Pedido</button>
+</div>

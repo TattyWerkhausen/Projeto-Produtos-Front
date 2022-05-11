@@ -1,0 +1,43 @@
+<div class="div-principal">
+  <div class="col-6 div-btn">
+    <a routerLink="/telaPrincipal/" target="_blank"
+      ><button class="btn-inicio" style="margin-top: 10px">Início</button>
+    </a>
+  </div>
+  <div  class="col-6 div-btn">
+    <a routerLink="/telaPrincipalAcrescentos/"
+      ><button class="btn-tela" style="margin-top: 10px">Tela Acrescentos</button>
+    </a>
+  </div>
+  <div *ngFor="let acrescento of acrescentos">
+    <table class="table table-bordered">
+      <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Custo R$</th>
+        <th>Venda R$</th>
+        <th>Gramagem</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <td>{{ acrescento.id }}</td>
+        <td>{{ acrescento.nome }}</td>
+        <td>{{ acrescento.valorCusto }}</td>
+        <td>{{ acrescento.valorVenda }}</td>
+        <td>{{ acrescento.gramagem }}</td>
+
+        <td>
+          <a [routerLink]="'/editarAcrescento/' + acrescento.id"
+            ><button class="btns-e">Editar</button></a
+          >
+        </td>
+        <td>
+          <a [routerLink]="'/excluirAcrescento/' + acrescento.id"
+            ><button class="btns-e">Excluir</button></a
+          >
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

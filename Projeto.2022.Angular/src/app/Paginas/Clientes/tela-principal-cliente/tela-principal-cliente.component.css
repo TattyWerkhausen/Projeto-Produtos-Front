@@ -1,0 +1,10 @@
+.div-principal{
+  background-color: #b58d43;
+    width: 100%;
+    height: 100%;
+}
+
+.painel-cliente{
+  display: inline-grid;
+
+}

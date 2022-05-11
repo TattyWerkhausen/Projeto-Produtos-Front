@@ -1,0 +1,67 @@
+<div class="div-curta">
+  <ng-container>
+    <div [formGroup]="formulario">
+      <div>
+        <button class="btn">
+          <input
+            type="text"
+            formControlName="chaveAcesso"
+            placeholder="Chave de Acesso"
+          />
+          <button class="btn-ok" (click)="buscarChave()">Ok</button>
+
+          <div *ngFor="let funcionario of funcionarios">
+            <table class="table">
+              <div *ngIf="!funcionario">
+                <td>Funcionario não logado</td>
+              </div>
+              <div *ngIf="funcionario">
+                <h2>Dados do funcionario logado</h2>
+                <tr>
+                  <th>Funcionario</th>
+                  <td>{{ funcionario.id }}</td>
+                </tr>
+                <tr>
+                  <th>Nome</th>
+                  <td>{{ funcionario.nome }}</td>
+                </tr>
+                <tr>
+                  <th>Sobrenome</th>
+                  <td>{{ funcionario.sobrenome }}</td>
+                </tr>
+                <tr>
+                  <th>Cpf</th>
+                  <td>{{ funcionario.cpf }}</td>
+                </tr>
+                <tr>
+                  <th>Email</th>
+                  <td>{{ funcionario.email }}</td>
+                </tr>
+                <tr>
+                  <th>Telefone</th>
+                  <td>{{ funcionario.telefone }}</td>
+                </tr>
+                <tr>
+                  <th>Data nascimento</th>
+                  <td>{{ funcionario.dataNascimento }}</td>
+                </tr>
+                <tr>
+                  <th>
+                    <a
+                      *ngIf="funcionario"
+                      routerLink="/telaPrincipalFuncionario/"
+                    >
+                      <button class="btn-continuar">Continuar</button>
+                    </a>
+                  </th>
+                  <td></td>
+                </tr>
+              </div>
+            </table>
+          </div>
+        </button>
+        <div></div>
+      </div>
+    </div>
+  </ng-container>
+</div>

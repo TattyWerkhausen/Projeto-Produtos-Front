@@ -1,0 +1,106 @@
+<div class="div-curta">
+  <div [formGroup]="formulario">
+    <div class="col-3" style="display: inline-flex; margin-left: -12px">
+      <input
+        class="input-busca"
+        type="text"
+        formControlName="nome"
+        placeholder="buscar funcionário nome..."
+      />
+    </div>
+    <div class="col-3" style="display: inline-block">
+      <button class="btns" (click)="buscarFuncionarioNome()">
+        Exibir Funcionário Nome
+      </button>
+    </div>
+    <ng-container >
+      <div
+        [class]="classAlerta.classSelecionada"
+        *ngIf="mensagemBuscarFuncionario && !funcionarioFoiEncontrado()"
+      >
+        <p id="frase-nao-localizado">Funcionário não localizado</p>
+        <button
+          class="btn-ok-funcionario-nao-encontrado"
+          (click)="encerrarAposNenhumFuncionarioEncontrado()"
+        >
+          Ok
+        </button>
+      </div>
+
+      <div *ngIf="funcionarioFoiEncontrado()" class="busca-com-sucesso">
+        <table class="table table-bordered">
+          <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Chave</th>
+            <th>Sobrenome</th>
+            <th>Email</th>
+            <th>Telefone</th>
+            <th>Cpf</th>
+            <th>Data Nascimento</th>
+          </tr>
+          <tr>
+            <td>{{ funcionarioEncontrado?.id }}</td>
+            <td>{{ funcionarioEncontrado?.nome }}</td>
+            <td>{{ funcionarioEncontrado?.chaveAcesso }}</td>
+            <td>{{ funcionarioEncontrado?.sobrenome }}</td>
+            <td>{{ funcionarioEncontrado?.email }}</td>
+            <td>{{ funcionarioEncontrado?.telefone }}</td>
+            <td>{{ funcionarioEncontrado?.cpf }}</td>
+            <td>{{ funcionarioEncontrado?.dataNascimento }}</td>
+          </tr>
+          <tr>
+            <th>UF</th>
+            <th>Cep</th>
+            <th>Cidade</th>
+            <th>Bairro</th>
+            <th>Rua</th>
+            <th>Número</th>
+            <th>Complemento</th>
+            <th></th>
+          </tr>
+          <tr>
+            <td>{{ funcionarioEncontrado?.enderecoModel?.uf }}</td>
+            <td>{{ funcionarioEncontrado?.enderecoModel?.cep }}</td>
+            <td>{{ funcionarioEncontrado?.enderecoModel?.cidade }}</td>
+            <td>{{ funcionarioEncontrado?.enderecoModel?.bairro }}</td>
+            <td>{{ funcionarioEncontrado?.enderecoModel?.rua }}</td>
+            <td>{{ funcionarioEncontrado?.enderecoModel?.numero }}</td>
+            <td>{{ funcionarioEncontrado?.enderecoModel?.complemento }}</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>
+              <a
+                [routerLink]="
+                  '/editarFuncionarioNome/' + funcionarioEncontrado?.nome
+                "
+                ><button class="btns-e">Editar</button></a
+              >
+            </td>
+            <td>
+              <a
+                [routerLink]="
+                  '/excluirFuncionarioNome/' + funcionarioEncontrado?.nome
+                "
+                ><button class="btns-e">Excluir</button></a
+              >
+            </td>
+          </tr>
+        </table>
+      </div>
+    </ng-container>
+    <div>
+      <a routerLink="/telaPrincipal/" target="_blank"
+        ><button class="btns" style="margin-top: 15px">Início</button>
+      </a>
+    </div>
+    <div>
+      <a routerLink="/telaPrincipalFuncionario/"
+        ><button class="btns" style="margin-top: 10px">
+          Tela Funcionário
+        </button></a
+      >
+    </div>
+  </div>
+</div>

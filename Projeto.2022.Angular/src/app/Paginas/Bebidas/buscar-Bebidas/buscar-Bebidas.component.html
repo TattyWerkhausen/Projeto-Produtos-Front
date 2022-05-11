@@ -1,0 +1,31 @@
+<div class="div-principal">
+  <div class="col-6 div-btn">
+    <a routerLink="/telaPrincipal/" target="_blank"><button class="btn-inicio">Início</button></a>
+  </div>
+  <div class="col-6 div-btn">
+    <a routerLink="/telaPrincipalBebidas/"><button class="btn-tela">Tela Bebidas</button></a>
+  </div>
+<div *ngFor="let bebida of bebidas ">
+
+  <table class="table table-bordered">
+    <tr>
+      <th>Id</th>
+      <th>Nome</th>
+      <th>Teor Alcóolico</th>
+      <th>Custo R$</th>
+      <th>Venda R$</th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <td>{{ bebida.id }}</td>
+      <td>{{ bebida.nome }}</td>
+      <td>{{ bebida.teorAlcoolico }}</td>
+      <td>{{ bebida.valorCusto }}</td>
+      <td>{{ bebida.valorVenda }}</td>
+      <td><a [routerLink]='"/editarBebida/" + bebida.id'><button class="btns-e">Editar</button></a></td>
+      <td><a [routerLink]='"/excluirBebida/" + bebida.id'><button class="btns-e">Excluir</button></a></td>
+    </tr>
+  </table>
+</div>
+</div>
