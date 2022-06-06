@@ -29,3 +29,48 @@ display: block;
 .nome-sub-classe-bebida{
   font-weight: 100;
 }
+.sub-total{
+  margin-left: 60px;
+  background: white;
+  width: 130px;
+  height: 26px;
+  text-align: center;
+  border-radius: 3px;
+  font-weight: 300;
+}
+.mais-acrescentos{
+
+}
+.select-acrescento{
+  width: 135px;
+  height: 26px;
+  border-radius: 4px;
+  margin-left: 120px
+}
+.nome-sub-classes-acre{
+  margin-left: 43px;
+  margin-top: 2px;
+  font-weight: 100;
+  position: absolute;
+}
+#enderecos{
+  position: absolute;
+  margin-left:-60px;
+}
+.busca-endereco{
+  width: 170px;
+  height: 29px;
+  border-radius: 4px;
+  border: 1px solid #646262;
+  text-align: center;
+  outline:0;
+}
+.btn-busca-endereco{
+  width: 105px;
+    height: 28px;
+    border: 1px solid gray;
+}
+.input-endereco{
+  display: block;
+  width: 110px;
+}

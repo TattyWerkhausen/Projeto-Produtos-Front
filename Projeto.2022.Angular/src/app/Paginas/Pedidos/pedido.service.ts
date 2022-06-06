@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { PedidoIdViewModel } from './pedido-id-view-model';
+import { ClienteViewModel } from '../Clientes/cliente-view-model';
 
 @Injectable({
   providedIn: 'root'

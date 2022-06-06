@@ -1,3 +1,4 @@
+import { EnderecoViewModel } from './../Shared/endereco-view-model';
 import { ClienteViewModelId } from './cliente-view-model-id';
 import { Observable, observable } from 'rxjs';
 import { ClienteViewModel } from './cliente-view-model';
@@ -14,6 +15,9 @@ export class ClienteService {
   cadastrarCliente(cadastrarCliente: ClienteViewModel): Observable<any> {
     return this.httpService.post<any>(this.conexaoApi + 'api/Cliente/cadastrarCliente', cadastrarCliente);
   }
+    cadastrarNovoEndereco(novoEndereco: EnderecoViewModel): Observable<any>{
+      return this.httpService.post<any>(this.conexaoApi + 'api/Cliente/cadastrarNovoEndereco', novoEndereco);
+  }
   buscarTodosClientes(): Observable<ClienteViewModelId[]> {
     return this.httpService.get<ClienteViewModelId[]>(this.conexaoApi + 'api/Cliente/buscarTodosClientes');
   }
@@ -25,6 +29,9 @@ export class ClienteService {
   }
   buscarClienteChave(chave: string): Observable<ClienteViewModelId> {
     return this.httpService.get<ClienteViewModelId>(this.conexaoApi + 'api/Cliente/buscarClienteChave/' + chave);
+  }
+  buscarEnderecoCliente(enderecoCli: string): Observable<ClienteViewModelId> {
+    return this.httpService.get<ClienteViewModelId>(this.conexaoApi + 'api/Cliente/buscarEnderecoCliente/' + enderecoCli);
   }
   editarCliente(id: string, cliente: ClienteViewModel): Observable<any> {
     return this.httpService.put<any>(this.conexaoApi + 'api/Cliente/editarCliente/' + id, cliente);
